@@ -43,6 +43,7 @@ in{
    
    environment.systemPackages = with pkgs;[
       git
+      cemu
       myPythonEnv
       neovim
       neofetch
