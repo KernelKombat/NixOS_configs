@@ -25,6 +25,7 @@ in{
    
    jovian = {
     steam.enable = true;
+    decky-loader.enable = true;
     hardware.has.amd.gpu = true;
     steam.desktopSession = true;
    };
