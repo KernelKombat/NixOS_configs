@@ -22,7 +22,6 @@ let
 
 in{
    programs.firefox.enable = true;
-   programs.git.enable = true;
    
    jovian = {
     steam.enable = true;
@@ -43,6 +42,7 @@ in{
    programs.gamescope.enable = true;
    
    environment.systemPackages = with pkgs;[
+      git
       myPythonEnv
       neovim
       neofetch
