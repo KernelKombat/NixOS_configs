@@ -28,9 +28,6 @@ in{
     hardware.has.amd.gpu = true;
     steam.desktopSession = true;
    };
-  programs.steam.extraCompatPackages = with pkgs; [
-    proton-ge-custom
-  ];
 
    programs.gamemode.enable = true;
     
