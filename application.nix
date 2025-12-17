@@ -67,6 +67,7 @@ in{
       rocmPackages.rocminfo
       rocmPackages.rocm-smi
       radeontop
+      zsh
       git
       btop-rocm
       nvtopPackages.full
@@ -86,6 +87,26 @@ in{
       pciutils
       usbutils
       bat
-
    ];
+
+fonts = {
+  enableDefaultPackages = true;
+  packages = with pkgs; [
+    noto-fonts
+    noto-fonts-color-emoji
+    dejavu_fonts
+    jetbrains-mono
+    font-awesome
+    material-icons
+  ];
+  fontconfig = {
+    enable = true;
+    defaultFonts = {
+      serif = [ "Noto Serif" "DejaVu Serif" ];
+      sansSerif = [ "Noto Sans" "DejaVu Sans" ];
+      monospace = [ "JetBrains Mono" "DejaVu Sans Mono" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
+};
 }
