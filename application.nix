@@ -43,7 +43,7 @@ in{
       cemu
       myPythonEnv
       neovim
-      neofetch
+      fastfetch
       kitty
       brave
       vscode
