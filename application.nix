@@ -37,11 +37,7 @@ in{
    programs.gamescope.enable = true;
    
    environment.systemPackages = with pkgs;[
-      git
       cemu
-      myPythonEnv      
-      neovim
-      fastfetch
       kitty
       brave
       vscode
@@ -52,7 +48,6 @@ in{
       obs-studio
       handbrake
       davinci-resolve
-      ani-cli
       discord
       wineWowPackages.stagingFull
       ryubing
@@ -71,6 +66,8 @@ in{
       amf-headers
       rocmPackages.rocminfo
       rocmPackages.rocm-smi
+      radeontop
+      git
       btop-rocm
       nvtopPackages.full
       ffmpeg
@@ -78,7 +75,11 @@ in{
       jq
       zip
       unzip
+      myPythonEnv
+      neovim
+      fastfetch
       unrar
+      ani-cli
       clinfo
       bmon
       spotdl
