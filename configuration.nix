@@ -88,6 +88,7 @@
   environment.variables = {
     RUSTICL_ENABLE = "radeonsi";
     QT_QPA_PLATFORM = "xcb";
+#     PATH = [ "$HOME/bin" "$HOME/.local/bin" "/usr/local/bin" ];
   };
 
   # Zsh Config
@@ -104,6 +105,17 @@
     nix-clean = "sudo nix-collect-garbage -d && sudo nix-store --optimise";
     nix-update = "cd /etc/nixos/ && sudo nix flake update && cd && sudo nixos-rebuild switch --upgrade";
     };
+
+    shellInit = ''
+    export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
+    '';
+
+    ohMyZsh = {
+      enable = true;
+      theme = "darkblood";
+      plugins = [ "git" "sudo" "kitty" ];
+    };
+
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
