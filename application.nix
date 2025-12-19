@@ -1,4 +1,4 @@
-{  config, pkgs, stable, chaotic, jovian, ...  }:
+{  config, pkgs, stable, ...  }:
 
 let
   myPythonEnv = stable.python3.withPackages (ps: with ps; [
@@ -23,27 +23,56 @@ let
 in{
    programs.firefox.enable = true;
    
-   jovian = {
-    steam.enable = true;
-    hardware.has.amd.gpu = true;
-    steam.desktopSession = true;
+   programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
    }; 
-
+   
    programs.gamemode.enable = true;
+   programs.gamescope.enable = true;
+   
+   programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+  };
+
+
     
    programs.appimage.enable = true;
    programs.appimage.binfmt = true;
    
-   programs.gamescope.enable = true;
+   
    
    environment.systemPackages = with pkgs;[
       kitty
-      hyprland
       hyprpaper
+      hyprlock
+      hypridle
       waybar
       nwg-look
       nwg-displays
+      wofi
+      grim
+      slurp
+      wl-clipboard
+      cliphist            
+      playerctl              
+      brightnessctl        
+      networkmanagerapplet
+      blueman
       
+      nemo
       cemu
       brave
       vscode
@@ -61,7 +90,7 @@ in{
       protonvpn-gui
       protonup-qt
       spotify
-      jovian-chaotic.mangohud
+      mangohud
       goverlay
       protontricks
       komikku
