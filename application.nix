@@ -37,8 +37,14 @@ in{
    programs.gamescope.enable = true;
    
    environment.systemPackages = with pkgs;[
-      cemu
       kitty
+      hyprland
+      hyprpaper
+      waybar
+      nwg-look
+      nwg-displays
+      
+      cemu
       brave
       vscode
       vlc
@@ -59,7 +65,7 @@ in{
       goverlay
       protontricks
       komikku
-      wpsoffice
+      onlyoffice-desktopeditors
       telegram-desktop
 
       amf
@@ -84,6 +90,7 @@ in{
       clinfo
       bmon
       spotdl
+      pywal
       pciutils
       usbutils
       bat
@@ -92,8 +99,6 @@ in{
 fonts = {
   enableDefaultPackages = true;
   packages = with pkgs; [
-    noto-fonts
-    noto-fonts-color-emoji
     dejavu_fonts
     jetbrains-mono
     font-awesome
