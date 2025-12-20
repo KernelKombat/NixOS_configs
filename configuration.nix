@@ -65,11 +65,20 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.ly.enable = true;
-  services.desktopManager.plasma6.enable = true;
+ 
+  services.displayManager.ly = {
+  enable = true;
+  settings = {
+    animation = 0;
+    animate = true;
+    bigclock = true;
+    load = false;
+  };
+};
   services.blueman.enable = true;
+  
+  # Enable the KDE Plasma Desktop Environment.
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -147,7 +156,7 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true
+  nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     http-connections = 64;
